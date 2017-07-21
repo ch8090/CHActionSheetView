@@ -95,7 +95,7 @@
     UIButton *button = (UIButton *)[self viewWithTag:index];
     button.titleLabel.font = font;
 }
--(void)showInViewWindow
+-(void)show
 {
     [UIView animateWithDuration:0.4 animations:^{
         CGRect frame = CGRectMake((Screen_Width-self.frame.size.width)/2, Screen_Height-self.frame.size.height, self.frame.size.width, self.frame.size.height);

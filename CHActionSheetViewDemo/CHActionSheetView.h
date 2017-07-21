@@ -33,5 +33,5 @@
 
 -(void)setTitleFont:(UIFont *)font  titleIndex:(NSInteger)index;
 
--(void)showInViewWindow;
+-(void)show;
 @end
