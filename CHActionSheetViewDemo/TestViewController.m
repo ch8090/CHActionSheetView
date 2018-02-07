@@ -20,14 +20,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 30);
+    button.backgroundColor = [UIColor blueColor];
+    [button setTitle:@"显示选择框" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonClickAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+- (void)buttonClickAction{
     CHActionSheetView *view = [[CHActionSheetView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0)];
     view.delegate = self;
     [view setTitle:@[@"选择一",@"选择二",@"选择三",] cancelTitle:@"取消"];
     // [view setTitleFont:[UIFont systemFontOfSize:40] titleIndex:1];
     // [view setTitleColor:[UIColor redColor] titleIndex:1];
-    [view showInViewWindow];
+    [view show];
 }
-
 #pragma mark CHActionSheetViewDelegate
 -(void)actionsheetSelectButton:(CHActionSheetView *)actionSheet buttonIndex:(NSInteger)index{
     NSLog(@"点击了++%ld",index);
